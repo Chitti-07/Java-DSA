@@ -15,7 +15,7 @@ public class Shuffleing_Elements {
         int i = 0;
         int j = n;
         int curr = 0;
-        while(i < j){
+        while(i < n){
             res[curr] = nums[i];
             curr++;
             i++;
