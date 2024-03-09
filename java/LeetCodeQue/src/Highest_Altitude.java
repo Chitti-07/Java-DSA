@@ -20,7 +20,10 @@ public class Highest_Altitude {
 
         for(int i = 0; i < gain.length; i++){
             curr += gain[i];
-            max = Math.max(curr,max);
+//            max = Math.max(curr,max);
+            if (curr >= max){
+                max = curr;
+            }
         }
         return max;
     }

@@ -2,6 +2,8 @@ import java.sql.SQLOutput;
 import java.util.*;
 
 class Array_To_ArrayForm_of_Integer {
+
+    //Apprpach -> 1
     static int[] addToArrayForm(int[] num, int k) {
         int n = 0;
         for (int i = 0; i < num.length; i++) {
@@ -19,9 +21,29 @@ class Array_To_ArrayForm_of_Integer {
         return arr;
     }
 
+    //Approach -> 2
+    static int[] addToArray(int[] arr, int k){
+        int num = 0;
+        for (int i = 0; i < arr.length; i++) {
+            num = num * 10 + arr[i];
+        }
+        int res = num + k;
+        int len = Integer.toString(res).length();
+        int[] newArr = new int[len];
+        int j = 0;
+        while (res != 0){
+            newArr[len-j-1] = res % 10;
+            res /= 10;
+            j++;
+        }
+        return newArr;
+    }
+
+
+
     public static void main(String[] args) {
-        int[] num = {2, 7, 4};
-        int k = 181;
-        System.out.println(Arrays.toString(addToArrayForm(num,k)));
+        int[] num = {1, 2, 0, 0};
+        int k = 34;
+        System.out.println(Arrays.toString(addToArray(num,k)));
     }
 }

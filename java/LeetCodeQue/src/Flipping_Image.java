@@ -20,8 +20,11 @@ public class Flipping_Image {
 
     public static void main(String[] args) {
         int[][] arr = {{1,1,0},{1,0,1},{0,0,0}};
-        int[][] ans = InvertImage(arr);
-        System.out.println(Arrays.toString(ans));
+        flip(arr);
+        for (int[] rows: arr){
+            System.out.println(Arrays.toString(rows));
+        }
+
 
     }
 
@@ -48,30 +51,51 @@ public class Flipping_Image {
 
     //2nd type of apprach
 
-    static int[][] InvertImage (int[][] arr){
-        for(int[] row : arr){
-            reverse(row);
-            flip(row);
+//    static int[][] InvertImage (int[][] arr){
+//        for(int[] row : arr){
+//            reverse(row);
+//            flip(row);
+//        }
+//        return arr;
+//    }
+//
+//    static int[][] reverse(int[] arr){
+//        int start = 0;
+//        int end = arr.length - 1;
+//
+//        while(start <= end){
+//            int temp = arr[start];
+//            arr[start++] = arr[end];
+//            arr[end--] = temp;
+//        }
+//        return arr;
+//    }
+//
+//    static void flip(int[] arr){
+//        for (int num: arr){
+//            num = num == 0 ? 1 : 0;
+//        }
+//
+//    }
+
+    static int[][] flip(int[][] arr){
+        for (int[] rows: arr){
+            int start = 0;
+            int end = rows.length - 1;
+
+            while (start <= end){
+                int temp = rows[start];
+                rows[start++] = rows[end] ^ 1;
+                rows[end--] = temp ^ 1;
+
+
+            }
+//            for (int num: rows){
+//                if (num == 0){
+//                    num ^= 1;
+//                }
+//            }
         }
         return arr;
     }
-
-    static void reverse(int[] arr){
-        int start = 0;
-        int end = arr.length - 1;
-
-        while(start <= end){
-            int temp = arr[start];
-            arr[start++] = arr[end];
-            arr[end--] = temp;
-        }
-    }
-
-    static void flip(int[] arr){
-        for (int i = 0; i < arr.length - 1; i++) {
-            arr[i] = arr[i] == 0 ? 1 : 0;
-        }
-    }
-
-
 }

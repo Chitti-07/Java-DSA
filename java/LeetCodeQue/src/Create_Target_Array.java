@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Create_Target_Array {
 
@@ -35,8 +37,9 @@ public class Create_Target_Array {
 
     public static void main(String[] args) {
         int[] num = {0,1,2,3,4};
-        int[] index = {0,1,2,3,1};
+        int[] index = {0,1,2,2,1};
         int[] ans = createTargetArray(num,index);
         System.out.println(Arrays.toString(ans));
+        System.out.println(num.length);
     }
 }
