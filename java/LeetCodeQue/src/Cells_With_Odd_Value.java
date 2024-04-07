@@ -36,7 +36,7 @@ import java.util.Scanner;
             int count = 0;
             for(int row = 0; row < mat.length; row++){
                 for(int col = 0; col < mat[row].length; col++){
-                    if(mat[row][col] != 0){
+                    if(mat[row][col] % 2 != 0){
                         count++;
                     }
                 }

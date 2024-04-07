@@ -9,9 +9,9 @@ class Array_To_ArrayForm_of_Integer {
         for (int i = 0; i < num.length; i++) {
             n = n * 10 + num[i];
         }
-        n = n + k;
+        int res = n + k;
         int j = 0;
-        int len = Integer.toString(n).length();
+        int len = Integer.toString(res).length();
         int[] arr = new int[len];
         while (n != 0) {
             arr[len - j - 1] = n % 10;
@@ -42,8 +42,8 @@ class Array_To_ArrayForm_of_Integer {
 
 
     public static void main(String[] args) {
-        int[] num = {1, 2, 0, 0};
-        int k = 34;
+        int[] num = {5, 7, 3};
+        int k = 781;
         System.out.println(Arrays.toString(addToArray(num,k)));
     }
 }
